@@ -1,0 +1,71 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.popup-shell {
+  position: relative;
+  min-width: 260px;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.open-sidepanel-button {
+  border: 1px solid #646cff;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font-size: 0.8rem;
+  line-height: 1;
+  padding: 0.4rem 0.55rem;
+  cursor: pointer;
+}
+
+.open-sidepanel-button:hover {
+  background: rgba(100, 108, 255, 0.15);
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+.logo.crx:hover {
+  filter: drop-shadow(0 0 2em #f2bae4aa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

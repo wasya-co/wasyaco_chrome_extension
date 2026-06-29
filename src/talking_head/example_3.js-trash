@@ -1,0 +1,40 @@
+import * as THREE from 'three';
+import createGL from 'gl';
+import { createCanvas } from 'canvas';
+
+const width = 1920;
+const height = 1080;
+
+// Headless WebGL context
+const gl = createGL(width, height, { preserveDrawingBuffer: true });
+
+// Fake canvas
+const canvas = createCanvas(width, height);
+canvas.getContext = () => gl;
+
+// Renderer
+const renderer = new THREE.WebGLRenderer({
+  canvas,
+  context: gl
+});
+renderer.setSize(width, height, false);
+renderer.setPixelRatio(1);
+
+// Scene
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+camera.position.z = 3;
+
+scene.add(new THREE.Mesh(
+  new THREE.BoxGeometry(),
+  new THREE.MeshStandardMaterial({ color: 0x00ff00 })
+));
+
+scene.add(new THREE.DirectionalLight(0xffffff, 1));
+
+// Render
+renderer.render(scene, camera);
+
+// Read pixels
+const pixels = new Uint8Array(width * height * 4);
+gl.readPixels(0, 0, width, height, gl.RGBA, gl.UNSIGNED_BYTE, pixels);

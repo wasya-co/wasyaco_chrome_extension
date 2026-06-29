@@ -1,0 +1,46 @@
+{
+  "name": "example_crxjs",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "canvas": "^3.2.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "gl": "^8.1.6",
+    "openai": "^6.35.0",
+    "puppeteer": "^24.34.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "three": "^0.184.0",
+
+    "@browsermcp/mcp": "^0.1.3",
+    "@modelcontextprotocol/server-puppeteer": "^2025.5.12",
+    "@puppeteer/browsers": "^2.7.1",
+    "dotenv": "^17.4.2",
+    "openai": "^6.34.0",
+    "puppeteer": "^24.3.0",
+    "three": "^0.184.0",
+    "ws": "^8.20.0"
+
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.4.0",
+    "@types/chrome": "^0.1.37",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "sass": "^1.99.0",
+    "vite": "^8.0.0",
+    "vite-plugin-zip-pack": "^1.2.4"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "run_1": "node src/driver/fb.js",
+    "run_2": "node src/driver/wasya_co_2.js",
+    "run_3": "node src/driver/builtin_2.js",
+    "run_4": "node src/driver/piousbox_1.js"
+  }
+}

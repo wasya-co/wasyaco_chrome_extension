@@ -1,0 +1,33 @@
+import path from 'node:path'
+import { crx } from '@crxjs/vite-plugin'
+import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
+import zip from 'vite-plugin-zip-pack'
+import manifest from './manifest.config.js'
+import { name, version } from './package.json'
+
+export default defineConfig({
+  plugins: [
+    react(),
+    crx({ manifest }),
+    zip({ outDir: 'release', outFileName: `crx-${name}-${version}.zip` }),
+  ],
+  resolve: {
+    alias: {
+      '@': `${path.resolve(__dirname, 'src')}`,
+      '$shared': path.resolve(__dirname, 'src/shared'),
+    },
+  },
+  server: {
+    cors: {
+      origin: [
+        /chrome-extension:\/\//,
+      ],
+    },
+    hmr: {
+      host: 'localhost',
+      protocol: 'ws',
+      port: 5173
+    },
+  },
+})
