@@ -6,7 +6,8 @@ function App() {
   const [show, setShow] = useState(false)
   const toggle = () => setShow(!show)
 
-  return (
+  return (<i></i>)
+  /* return (
     <div className="popup-container">
       {show && (
         <div className={`popup-content ${show ? 'opacity-100' : 'opacity-0'}`}>
@@ -17,7 +18,7 @@ function App() {
         <img src={Logo} alt="CRXJS logo" className="button-icon" />
       </button>
     </div>
-  )
+  ) */
 }
 
 export default App

@@ -1,0 +1,4 @@
+
+= Deploy =
+
+  yarn run build
